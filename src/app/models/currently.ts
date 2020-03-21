@@ -1,5 +1,5 @@
 export interface Currently {
-    time:number,
+    time:string,
     summary:string,
     icon:string,
     temperature:number,

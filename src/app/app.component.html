@@ -6,13 +6,14 @@
             <h1>INSTAWEATHER</h1>
         </div>
         <div class="toggle">
-            C | F
+            <button [disabled]="disableCelsius" [ngClass]="{'button-disabled': disableCelsius}" (click)="toggleTemp('celsuis')">C</button>
+            <button [disabled]="disableFahrenheit" [ngClass]="{'button-disabled': disableFahrenheit}" (click)="toggleTemp('fahrenheit')">F</button>
         </div>
     </section>
     <section class="main">
         <div>
             <h1>New Cairo</h1>
-            <p>Friday 20, 2020</p>
+            <p>{{currentState.time}}</p>
             <!-- <img class="sun" style="width: 13%;" src="assets/images/sun.svg" alt="">
                     <img class="cloud" style="width: 20%;" src="assets/images/cloud.svg" alt="">
                     <img class="right-ray" src="assets/images/right-ray.svg" alt="">
@@ -39,12 +40,12 @@
             <h2>{{currentState.summary}}</h2>
         </div>
         <div>
-            <h1>{{currentState.temperature}} &#xb0;</h1>
-            <h3>{{temperatureHigh}} &#176; / {{temperatureLow}} &#176;</h3>
+            <h1>{{currentState.temperature}}&#xb0;</h1>
+            <h3>{{temperatureHigh}}&#176; / {{temperatureLow}}&#176;</h3>
             <p>{{dailyState.data && dailyState.data[0].summary}}</p>
         </div>
     </section>
 
     <!-- <app-current-temp></app-current-temp> -->
-    <app-hourly-forecast></app-hourly-forecast>
+    <app-hourly-forecast [hourlyState]="hourlyState" [dailyState]="dailyState"></app-hourly-forecast>
 </div>

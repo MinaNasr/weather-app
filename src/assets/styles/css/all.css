@@ -1,7 +1,7 @@
 .body {
     background: url('../../images/Background.png');
     color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Work Sans;
     padding: 2% 10%;
 }
 
@@ -10,13 +10,61 @@
     justify-content: space-between;
 }
 
+.toggle button:nth-child(1) {
+    font-family: Work Sans;
+    font-style: SemiBold;
+    font-size: 24px;
+    line-height: 28px;
+    line-height: 100%;
+    align-items: Left;
+    vertical-align: Top;
+    letter-spacing: 5%;
+    background: none;
+    color: #fff;
+    border: none;
+    border-right: 1px solid white;
+    padding: 5px 20px;
+}
+
+.toggle button:nth-child(2) {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: SemiBold;
+    font-size: 24px;
+    line-height: 28px;
+    line-height: 100%;
+    align-items: Left;
+    vertical-align: Top;
+    letter-spacing: 5%;
+    background: none;
+    color: #fff;
+    border: none;
+    padding: 5px 20px;
+}
+
+.toggle button:nth-child(1):hover:enabled,
+.toggle button:nth-child(2):hover:enabled {
+    background: rgba(255, 225, 225, 0.3);
+    cursor: pointer;
+}
+
+.button-disabled {
+    cursor: not-allowed;
+    background-color: #fff;
+    opacity: 0.3;
+}
+
 .main {
     display: flex;
     justify-content: space-between;
 }
 
+.main div:nth-child(2) {
+    text-align: center;
+}
+
 .main div:nth-child(2) h1 {
     font-size: 5rem;
+    margin-bottom: 30px;
 }
 
 .celsius {
@@ -114,32 +162,71 @@
     width: 20px;
 }
 
+.time-toggle a {
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 100;
+}
+
+.time-toggle a:active,
+.time-toggle a:visited {
+    color: #FFFFFF;
+}
+
 .horizontal-line {
     display: block;
     border-top: 2px solid #ccc;
     margin-top: 10px;
 }
 
-.carousel {
+.carousel,
+.carousel-daily {
     display: flex;
     /* flex-wrap: wrap; */
     overflow-x: auto;
     overflow-y: hidden;
 }
 
-.carousel div {
+.carousel div,
+.carousel-daily div {
     margin: 5px 50px 5px 0px;
 }
 
+@media only screen and (max-width: 600px) {
+    .carousel-daily h4 {
+        font-size: 15px;
+    }
+}
+
 .carousel h6,
+.carousel-daily h6 {
+    text-align: center;
+    font-size: 20px;
+    line-height: 100%;
+    font-weight: 100;
+}
+
+.carousel-daily h4,
 .carousel h4 {
     text-align: center;
+    font-size: 20px;
+    line-height: 100%;
+    font-weight: 100;
 }
 
 .carousel-img {
     position: relative;
     height: 60px;
-    width: 50px;
+    width: 80px;
+}
+
+
+/* carousel-daily */
+
+.carousel-daily {
+    display: flex;
+    /* flex-wrap: wrap; */
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -254,4 +341,8 @@
     margin: auto;
     text-align: center;
     z-index: 2000;
+}
+
+.hide {
+    display: none;
 }
