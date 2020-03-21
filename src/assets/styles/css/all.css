@@ -2,7 +2,7 @@
     background: url('../../images/Background.png');
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
-    padding: 5% 10%;
+    padding: 2% 10%;
 }
 
 .header {
@@ -15,7 +15,7 @@
     justify-content: space-between;
 }
 
-.main:nth-child(2) h1 {
+.main div:nth-child(2) h1 {
     font-size: 5rem;
 }
 
@@ -86,13 +86,172 @@
 
 /* hourly forecast */
 
-.hourly-forecast {}
+.hourly-forecast {
+    margin-top: 20px;
+}
 
 .hourly-forecast a {
-    color: #fff;
+    /* color: #fff;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2rem;
     font-weight: 100;
+    margin-right: 35px; */
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 26px;
+    color: #fff;
+    text-decoration: none;
     margin-right: 35px;
+}
+
+.hourly-forecast a:after {
+    content: '';
+    border-top: 2px solid black;
+    margin-top: 10px;
+    width: 20px;
+}
+
+.horizontal-line {
+    display: block;
+    border-top: 2px solid #ccc;
+    margin-top: 10px;
+}
+
+.carousel {
+    display: flex;
+    /* flex-wrap: wrap; */
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.carousel div {
+    margin: 5px 50px 5px 0px;
+}
+
+.carousel h6,
+.carousel h4 {
+    text-align: center;
+}
+
+.carousel-img {
+    position: relative;
+    height: 60px;
+    width: 50px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ccc;
+}
+
+::-webkit-scrollbar-thumb {
+    background: black;
+    height: 20px;
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #fff;
+    height: 5px;
+}
+
+
+/* loader */
+
+.sk-spinner-three-bounce div {
+    width: 18px;
+    height: 18px;
+    background-color: #338eea;
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: sk-threeBounceDelay 1.4s infinite ease-in-out;
+    animation: sk-threeBounceDelay 1.4s infinite ease-in-out;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.sk-spinner-three-bounce .sk-bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+
+.sk-spinner-three-bounce .sk-bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-threeBounceDelay {
+    0%,
+    80%,
+    100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    40% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes sk-threeBounceDelay {
+    0%,
+    80%,
+    100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    40% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.sk-loading:after {
+    content: "";
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.sk-loading>.sk-spinner {
+    display: block;
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    z-index: 2000;
+}
+
+.sk-loading {
+    opacity: 0.5;
+    position: relative;
+}
+
+.sk-loading:after {
+    content: "";
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.sk-loading>.sk-spinner {
+    display: block;
+    position: absolute;
+    top: 40%;
+    margin: auto;
+    text-align: center;
+    z-index: 2000;
 }

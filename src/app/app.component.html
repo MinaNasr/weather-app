@@ -1,46 +1,50 @@
-<section class="header">
-    <div class="title">
-        <h1>INSTAWEATHER</h1>
-    </div>
-    <div class="toggle">
-        C | F
-    </div>
-</section>
-<section class="main">
-    <div>
-        <h1>New Cairo</h1>
-        <p>Friday 20, 2020</p>
-        <!-- <img class="sun" style="width: 13%;" src="assets/images/sun.svg" alt="">
-                <img class="cloud" style="width: 20%;" src="assets/images/cloud.svg" alt="">
-                <img class="right-ray" src="assets/images/right-ray.svg" alt="">
-                <img class="middle-ray" src="assets/images/middle-ray.svg" alt="">
-                <img class="left-ray" src="assets/images/left-ray.svg" alt=""> -->
+<div [ngClass]="{'sk-loading': isLoading}">
 
-        <svg class="state-img" width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <symbol id="icon" style="display: none;" viewBox="0 0 60 60">
-                    <path id="sun" d="M27.8508 53.8998C42.9882 53.8998 55.2595 41.8581 55.2595 27.0038C55.2595 12.1495 42.9882 0.107727 27.8508 0.107727C12.7133 0.107727 0.442017 12.1495 0.442017 27.0038C0.442017 41.8581 12.7133 53.8998 27.8508 53.8998Z" fill="#FCB641"/>
-                    <path id="cloud" d="M85.8958 31.8454C85.6701 31.8454 77.3008 31.8454 77.3008 31.8454C77.4507 30.2332 77.5507 30.0945 77.5539 29.1304C77.5797 20.5305 71.8384 13.0172 63.44 11.1663C58.6531 10.1119 54.0839 10.8906 50.3031 12.9318C45.6904 6.06669 38.0482 1.43622 29.2887 0.900945C28.1617 0.746166 27.0202 0.654266 25.8513 0.654266C11.5746 0.654266 0 12.598 0 27.3214C0 34.9942 3.16168 41.8932 8.19199 46.7574C12.6403 51.6926 18.8169 54.8817 26.1302 55.4121C26.1302 55.4121 85.6701 55.7072 85.8958 55.7072C91.8838 55.7072 96.7368 50.2238 96.7368 43.7747C96.7368 37.3288 91.8822 31.8454 85.8958 31.8454Z" fill="white"/>
-                    <path id="left-ray" d="M9.11433 10.6721C8.70158 10.6721 8.28884 10.5141 7.97444 10.1997L1.13515 3.36041C0.504753 2.73001 0.504753 1.71105 1.13515 1.08065C1.76556 0.450249 2.78452 0.450249 3.41492 1.08065L10.2542 7.91994C10.8846 8.55034 10.8846 9.5693 10.2542 10.1997C9.93981 10.5141 9.52707 10.6721 9.11433 10.6721Z" fill="#FCB641"/>
-                    <path id="middle-ray" d="M1.71574 13.1911C0.825757 13.1911 0.103455 12.4688 0.103455 11.5788V1.9051C0.103455 1.01512 0.825757 0.292816 1.71574 0.292816C2.60572 0.292816 3.32802 1.01512 3.32802 1.9051V11.5788C3.32802 12.4688 2.60572 13.1911 1.71574 13.1911Z" fill="#FCB641"/>
-                    <path id="right-ray" d="M2.54639 10.903C2.13365 10.903 1.72091 10.745 1.40652 10.4306C0.776115 9.80017 0.776115 8.78121 1.40652 8.1508L8.24742 1.3099C8.87782 0.679497 9.89678 0.679497 10.5272 1.3099C11.1576 1.9403 11.1576 2.95926 10.5272 3.58966L3.68628 10.4306C3.37188 10.745 2.95914 10.903 2.54639 10.903Z" fill="#FCB641"/>
+    <app-loader class="sk-spinner sk-spinner-three-bounce" *ngIf="isLoading"></app-loader>
+    <section class="header">
+        <div class="title">
+            <h1>INSTAWEATHER</h1>
+        </div>
+        <div class="toggle">
+            C | F
+        </div>
+    </section>
+    <section class="main">
+        <div>
+            <h1>New Cairo</h1>
+            <p>Friday 20, 2020</p>
+            <!-- <img class="sun" style="width: 13%;" src="assets/images/sun.svg" alt="">
+                    <img class="cloud" style="width: 20%;" src="assets/images/cloud.svg" alt="">
+                    <img class="right-ray" src="assets/images/right-ray.svg" alt="">
+                    <img class="middle-ray" src="assets/images/middle-ray.svg" alt="">
+                    <img class="left-ray" src="assets/images/left-ray.svg" alt=""> -->
 
-                  </symbol>
-                  <svg>
-                    <use class="absolute" xlink:href="#right-ray" x="86.93px" y="9.84px" width="10.07px" height="10.07px" />
-                    <use class="absolute" xlink:href="#middle-ray" x="66.1px" y="0.29px" width="3.22px" height="12.9px" />
-                    <use class="absolute" xlink:href="#left-ray" x="33.66px" y="14.61px" width="10.06px" height="10.06px" />
-                    <use class="absolute" xlink:href="#sun" x="41.44px" y="20.11px" width="54.82px" height="53.79px" />
-                    <use class="absolute" xlink:href="#cloud" x="0px" y="41.65px" width="96.74px" height="55.05px" />
-                  </svg>
-        </svg>
-        <h2>cloudy</h2>
-    </div>
-    <div>
-        <h1>72 &#xb0;</h1>
-        <h3>81 &#176; / 63 &#176;</h3>
-        <p>cloudy throughout the day</p>
-    </div>
-</section>
+            <svg class="state-img" width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <symbol id="icon" style="display: none;" viewBox="0 0 60 60">
+                        <path id="sun" d="M27.8508 53.8998C42.9882 53.8998 55.2595 41.8581 55.2595 27.0038C55.2595 12.1495 42.9882 0.107727 27.8508 0.107727C12.7133 0.107727 0.442017 12.1495 0.442017 27.0038C0.442017 41.8581 12.7133 53.8998 27.8508 53.8998Z" fill="#FCB641"/>
+                        <path id="cloud" d="M85.8958 31.8454C85.6701 31.8454 77.3008 31.8454 77.3008 31.8454C77.4507 30.2332 77.5507 30.0945 77.5539 29.1304C77.5797 20.5305 71.8384 13.0172 63.44 11.1663C58.6531 10.1119 54.0839 10.8906 50.3031 12.9318C45.6904 6.06669 38.0482 1.43622 29.2887 0.900945C28.1617 0.746166 27.0202 0.654266 25.8513 0.654266C11.5746 0.654266 0 12.598 0 27.3214C0 34.9942 3.16168 41.8932 8.19199 46.7574C12.6403 51.6926 18.8169 54.8817 26.1302 55.4121C26.1302 55.4121 85.6701 55.7072 85.8958 55.7072C91.8838 55.7072 96.7368 50.2238 96.7368 43.7747C96.7368 37.3288 91.8822 31.8454 85.8958 31.8454Z" fill="white"/>
+                        <path id="left-ray" d="M9.11433 10.6721C8.70158 10.6721 8.28884 10.5141 7.97444 10.1997L1.13515 3.36041C0.504753 2.73001 0.504753 1.71105 1.13515 1.08065C1.76556 0.450249 2.78452 0.450249 3.41492 1.08065L10.2542 7.91994C10.8846 8.55034 10.8846 9.5693 10.2542 10.1997C9.93981 10.5141 9.52707 10.6721 9.11433 10.6721Z" fill="#FCB641"/>
+                        <path id="middle-ray" d="M1.71574 13.1911C0.825757 13.1911 0.103455 12.4688 0.103455 11.5788V1.9051C0.103455 1.01512 0.825757 0.292816 1.71574 0.292816C2.60572 0.292816 3.32802 1.01512 3.32802 1.9051V11.5788C3.32802 12.4688 2.60572 13.1911 1.71574 13.1911Z" fill="#FCB641"/>
+                        <path id="right-ray" d="M2.54639 10.903C2.13365 10.903 1.72091 10.745 1.40652 10.4306C0.776115 9.80017 0.776115 8.78121 1.40652 8.1508L8.24742 1.3099C8.87782 0.679497 9.89678 0.679497 10.5272 1.3099C11.1576 1.9403 11.1576 2.95926 10.5272 3.58966L3.68628 10.4306C3.37188 10.745 2.95914 10.903 2.54639 10.903Z" fill="#FCB641"/>
+    
+                      </symbol>
+                      <svg>
+                        <use class="absolute" xlink:href="#right-ray" x="86.93px" y="9.84px" width="10.07px" height="10.07px" />
+                        <use class="absolute" xlink:href="#middle-ray" x="66.1px" y="0.29px" width="3.22px" height="12.9px" />
+                        <use class="absolute" xlink:href="#left-ray" x="33.66px" y="14.61px" width="10.06px" height="10.06px" />
+                        <use class="absolute" xlink:href="#sun" x="41.44px" y="20.11px" width="54.82px" height="53.79px" />
+                        <use class="absolute" xlink:href="#cloud" x="0px" y="41.65px" width="96.74px" height="55.05px" />
+                      </svg>
+            </svg>
+            <h2>{{currentState.summary}}</h2>
+        </div>
+        <div>
+            <h1>{{currentState.temperature}} &#xb0;</h1>
+            <h3>{{temperatureHigh}} &#176; / {{temperatureLow}} &#176;</h3>
+            <p>{{dailyState.data && dailyState.data[0].summary}}</p>
+        </div>
+    </section>
 
-<!-- <app-current-temp></app-current-temp> -->
-<app-hourly-forecast></app-hourly-forecast>
+    <!-- <app-current-temp></app-current-temp> -->
+    <app-hourly-forecast></app-hourly-forecast>
+</div>
