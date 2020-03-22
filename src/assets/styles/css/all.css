@@ -10,6 +10,9 @@
     justify-content: space-between;
 }
 
+
+/* toggle-temp */
+
 .toggle button:nth-child(1) {
     font-family: Work Sans;
     font-style: SemiBold;
@@ -47,11 +50,8 @@
     cursor: pointer;
 }
 
-.button-disabled {
-    cursor: not-allowed;
-    background-color: #fff;
-    opacity: 0.3;
-}
+
+/* main-section */
 
 .main {
     display: flex;
@@ -83,28 +83,15 @@
     margin-top: 0;
 }
 
-.absolute {
-    position: absolute;
-}
+
+/* icons */
 
 .sun {
     position: absolute;
-    /* left: 11.72%;
-    right: 0.76%;
-    top: -9.27%;
-    bottom: 23.81%;
-    width: 54.82px;
-    height: 53.79px; */
 }
 
 .cloud {
     position: absolute;
-    /* left: 0%;
-    right: 0.27%;
-    top: 27.94%;
-    bottom: 0.3%;
-    width: 96.74px;
-    height: 55.05px; */
 }
 
 .right-ray {
@@ -138,24 +125,7 @@
     margin-top: 20px;
 }
 
-.hourly-forecast a {
-    /* color: #fff;
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.2rem;
-    font-weight: 100;
-    margin-right: 35px; */
-    font-family: Work Sans;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 22px;
-    line-height: 26px;
-    color: #fff;
-    text-decoration: none;
-    margin-right: 35px;
-}
-
-.hourly-forecast a:after {
+.time-toggle a:after {
     content: '';
     border-top: 2px solid black;
     margin-top: 10px;
@@ -163,13 +133,26 @@
 }
 
 .time-toggle a {
+    font-family: Work Sans;
+    font-style: normal;
+    font-size: 22px;
+    line-height: 26px;
+    text-decoration: none;
+    margin-right: 35px;
     color: rgba(255, 255, 255, 0.75);
     font-weight: 100;
 }
 
-.time-toggle a:active,
-.time-toggle a:visited {
+.time-toggle a:active {
     color: #FFFFFF;
+}
+
+.active,
+.time-toggle a:hover {
+    color: #FFFFFF !important;
+    font-weight: bold !important;
+    border-bottom: 3px solid white;
+    padding-bottom: 10px;
 }
 
 .horizontal-line {
@@ -177,6 +160,9 @@
     border-top: 2px solid #ccc;
     margin-top: 10px;
 }
+
+
+/* carousel */
 
 .carousel,
 .carousel-daily {
@@ -189,12 +175,6 @@
 .carousel div,
 .carousel-daily div {
     margin: 5px 50px 5px 0px;
-}
-
-@media only screen and (max-width: 600px) {
-    .carousel-daily h4 {
-        font-size: 15px;
-    }
 }
 
 .carousel h6,
@@ -229,17 +209,22 @@
     overflow-y: hidden;
 }
 
+
+/* scrol-bar */
+
 ::-webkit-scrollbar {
     width: 10px;
     height: 3px;
+    scrollbar-width: 0.5px;
 }
 
 ::-webkit-scrollbar-track {
     background: #ccc;
+    height: 1px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: black;
+    background: #fff;
     height: 20px;
     width: 5px;
 }
@@ -255,7 +240,7 @@
 .sk-spinner-three-bounce div {
     width: 18px;
     height: 18px;
-    background-color: #338eea;
+    background-color: #fff;
     border-radius: 100%;
     display: inline-block;
     -webkit-animation: sk-threeBounceDelay 1.4s infinite ease-in-out;
@@ -343,6 +328,40 @@
     z-index: 2000;
 }
 
+
+/* media queries */
+
+@media screen and (max-width: 1500px) {
+    .carousel-daily h4 {
+        font-size: 15px !important;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .title h1 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .title h1 {
+        font-size: 15px;
+    }
+}
+
+
+/* common classes */
+
 .hide {
     display: none;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.button-disabled {
+    cursor: not-allowed;
+    background-color: #fff;
+    opacity: 0.3;
 }

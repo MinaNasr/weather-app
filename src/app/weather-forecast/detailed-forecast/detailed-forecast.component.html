@@ -1,0 +1,27 @@
+<section class="hourly-forecast">
+    <div class="time-toggle">
+        <a class="forecast-choice" [ngClass]="{'active': hideDaily}" (click)="ActivateTab('hourly',$event)" href="#hourly">Hourly</a>
+        <a class="forecast-choice" [ngClass]="{'active': hideHourly}" (click)="ActivateTab('daily',$event)" href="#daily">Daily</a>
+    </div>
+    <div class="horizontal-line">
+    </div>
+    <div id="hourly" [ngClass]="{'hide': hideHourly}" class="carousel">
+        <div *ngFor="let item of hourlyState.data; let i = index">
+            <h6>{{ i != 0 ? item && item.time : 'Now'}}</h6>
+            <svg class="carousel-img" width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <use *ngFor="let record of item.svgGroup" class="absolute" [attr.xlink:href]="record.href" [attr.x]="record.x" [attr.y]="record.y" [attr.width]="record.width" [attr.height]="record.height" />
+            </svg>
+            <h4>{{item.temperature}}&#176;</h4>
+        </div>
+    </div>
+    <div id="daily" [ngClass]="{'hide': hideDaily}" class="carousel-daily">
+        <div *ngFor="let item of dailyState.data; let i = index">
+            <h6>{{ i != 0 ? item && item.time : 'Today'}}</h6>
+            <svg class="carousel-img" width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <use *ngFor="let record of item.svgGroup" class="absolute" [attr.xlink:href]="record.href" [attr.x]="record.x" [attr.y]="record.y" [attr.width]="record.width" [attr.height]="record.height" />
+            </svg>
+            <h4>{{item.temperatureHigh}}&#176; / {{item.temperatureLow}}&#176;</h4>
+        </div>
+
+    </div>
+</section>

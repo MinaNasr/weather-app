@@ -1,13 +1,13 @@
 export class Utils{
 
-    private svgsArrOfObjs = [
+    public static svgsArrOfObjs = [
         {href:"#right-ray", x:"86.93px" , y:"9.84px", width:"10.07px", height:"10.07px"},
         {href:"#middle-ray", x:"66.1px" , y:"0.29px", width:"3.22px", height:"12.9px"},
         {href:"#left-ray", x:"33.66px" , y:"14.61px", width:"10.06px", height:"10.06px"},
         {href:"#sun", x:"41.44px" , y:"20.11px", width:"54.82px", height:"53.79px"},
         {href:"#cloud", x:"0px" , y:"41.65px", width:"96.74px", height:"55.05px"},
-        {href:"#sunny-sun", x:"14.06px" , y:"14.44px", width:"37.88px", height:"37.88px"},
-        {href:"#sunny-shadow", x:"0px" , y:"0.19px", width:"66px", height:"65.63px"},
+        {href:"#sunny-shadow", x:"15px" , y:"0.19px", width:"66px", height:"65.63px"},
+        {href:"#sunny-sun", x:"29.06px" , y:"14.44px", width:"37.88px", height:"37.88px"},
       
     ]
 
@@ -29,14 +29,33 @@ export class Utils{
     }
 
     public static getSVGS(icon:string){
-        switch (icon) {
-            case 'value':
-                
-                break;
-        
-            default:
-                break;
+        let result;
+        if(icon && (icon == 'clear-night' || icon == 'clear-day')){
+            result =  this.svgsArrOfObjs.filter(record=>{
+                return record.href == '#sunny-sun' ||
+                record.href == '#sunny-shadow' 
+            })
+            
+        }else if(icon && (icon=='cloudy' ||icon=='partly-cloudy-day' || icon=='partly-cloudy-night' )){
+            result =  this.svgsArrOfObjs.filter(record=>{
+                return record.href == '#sun' ||
+                record.href == '#cloud' ||
+                record.href == '#left-ray' ||
+                record.href == '#middle-ray' ||
+                record.href == '#right-ray'
+            })
+            
+        }else{
+            result =  this.svgsArrOfObjs.filter(record=>{
+                return record.href == '#sun' ||
+                record.href == '#cloud' ||
+                record.href == '#left-ray' ||
+                record.href == '#middle-ray' ||
+                record.href == '#right-ray'
+            })
+            
         }
+        return result;
     }
 
     public static getDateAsString(date){
