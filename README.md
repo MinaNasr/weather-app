@@ -35,4 +35,4 @@ A simple weather app that show current temp based on location also shows hourly 
 
 # made by 
 
-- [MinaNasr]
+- [@MinaNasr]( https://github.com/MinaNasr )
