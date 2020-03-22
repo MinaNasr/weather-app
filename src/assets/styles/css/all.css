@@ -50,6 +50,11 @@
     cursor: pointer;
 }
 
+.toggle button:nth-child(1):disabled,
+.toggle button:nth-child(2):disabled {
+    background: rgba(255, 225, 225, 0.6);
+}
+
 
 /* main-section */
 
@@ -61,6 +66,12 @@
 .main div:nth-child(2) {
     text-align: center;
 }
+
+
+/* .main div:nth-child(1) h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+} */
 
 .main div:nth-child(2) h1 {
     font-size: 5rem;
@@ -177,6 +188,10 @@
     margin: 5px 50px 5px 0px;
 }
 
+.carousel-daily div {
+    margin: 5px 75px 5px 0px;
+}
+
 .carousel h6,
 .carousel-daily h6 {
     text-align: center;
@@ -191,6 +206,10 @@
     font-size: 20px;
     line-height: 100%;
     font-weight: 100;
+}
+
+.carousel-daily h4 {
+    font-size: 18px;
 }
 
 .carousel-img {
@@ -363,5 +382,5 @@
 .button-disabled {
     cursor: not-allowed;
     background-color: #fff;
-    opacity: 0.3;
+    /* opacity: 0.3; */
 }
