@@ -30,7 +30,7 @@ A simple weather app that show current temp based on location also shows hourly 
 
 - clone repo
 - npm install
-- npm start-
+- npm start
 - open http://localhost:4200
 
 # made by 
