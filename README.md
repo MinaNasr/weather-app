@@ -27,3 +27,12 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 # weather-app
 A simple weather app that show current temp based on location also shows hourly or daily forecast
+
+- clone repo
+- npm install
+- npm start-
+- open http://localhost:4200
+
+# made by 
+
+- [MinaNasr]
