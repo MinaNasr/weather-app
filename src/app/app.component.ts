@@ -80,6 +80,7 @@ export class AppComponent implements OnInit {
             record.temperatureLow = Utils.convertTemp(record.temperatureLow, 'fahrenheit');
           });
         }
+        
         break;
 
       default:
