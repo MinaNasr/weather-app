@@ -20,8 +20,8 @@
             <h2>{{currentState.summary}}</h2>
         </div>
         <div>
-            <h1>{{currentState.temperature}}&#xb0;</h1>
-            <h3>{{temperatureHigh}}&#176; / {{temperatureLow}}&#176;</h3>
+            <h1>{{temperature | approximate}}&#xb0;</h1>
+            <h3>{{temperatureHigh | approximate}}&#176; / {{temperatureLow | approximate}}&#176;</h3>
             <p>{{dailyState.data && dailyState.data[0].summary}}</p>
         </div>
     </section>

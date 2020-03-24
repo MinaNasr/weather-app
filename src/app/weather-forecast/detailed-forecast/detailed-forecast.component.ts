@@ -10,6 +10,7 @@ export class DetailedForecastComponent implements OnInit, OnChanges {
   @Input() dailyState;
   hideDaily = true;
   hideHourly = false;
+  math: Math;
 
 
   constructor() { }

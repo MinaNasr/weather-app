@@ -17,13 +17,16 @@ export class Utils {
 
     public static convertTemp(temp: number, to: string) {
         if (to) {
+            // let temperature = Math.round(temp);
+            // console.log('temp conv: ', temp);
+
             switch (to) {
                 case 'fahrenheit':
-                    return Math.ceil((temp * (9 / 5)) + 32);
+                    return (temp * (9 / 5)) + 32;
                     break;
 
                 case 'celsuis':
-                    return Math.ceil((temp - 32) * (5 / 9));
+                    return (temp - 32) * (5 / 9);
                     break;
 
                 default:

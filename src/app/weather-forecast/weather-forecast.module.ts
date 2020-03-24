@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DetailedForecastComponent } from './detailed-forecast/detailed-forecast.component';
-
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -9,10 +9,12 @@ import { DetailedForecastComponent } from './detailed-forecast/detailed-forecast
     DetailedForecastComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   exports: [
-    DetailedForecastComponent
+    DetailedForecastComponent,
+    SharedModule
   ]
 })
 export class WeatherForecastModule { }

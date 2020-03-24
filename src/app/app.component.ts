@@ -17,6 +17,8 @@ export class AppComponent implements OnInit {
   disableCelsius = false;
   disableFahrenheit = true;
   svgGroup = [];
+  temperature: number;
+  math: Math;
   constructor(private forecastService: ForecastService) {}
   public currentState = {} as Currently;
   public dailyState = {} as Daily;
@@ -31,13 +33,13 @@ export class AppComponent implements OnInit {
           this.isLoading = false;
           console.log('data: ', data);
           this.currentState = data.currently;
-          this.currentState.temperature = Math.ceil(this.currentState.temperature);
-          this.currentState.apparentTemperature = Math.ceil(this.currentState.apparentTemperature);
+          this.temperature = this.currentState.temperature;
+          this.currentState.apparentTemperature = this.currentState.apparentTemperature;
           this.currentState.time = Utils.getDateAsString(Number(this.currentState.time));
           this.dailyState = data.daily;
           this.hourlyState = data.hourly;
-          this.temperatureLow = Math.ceil(this.dailyState.data[0].temperatureLow);
-          this.temperatureHigh = Math.ceil(this.dailyState.data[0].temperatureHigh);
+          this.temperatureLow = this.dailyState.data[0].temperatureLow;
+          this.temperatureHigh = this.dailyState.data[0].temperatureHigh;
           this.svgGroup = Utils.getSVGS(this.currentState.icon);
           console.log('svgGroup', this.svgGroup);
 
@@ -53,9 +55,11 @@ export class AppComponent implements OnInit {
         if (!this.disableCelsius) {
           this.disableCelsius = true;
           this.disableFahrenheit = false;
-          this.currentState.temperature =  Utils.convertTemp( this.currentState.temperature, 'celsuis');
-          this.temperatureLow =  Utils.convertTemp( this.temperatureLow, 'celsuis');
-          this.temperatureHigh =  Utils.convertTemp( this.temperatureHigh, 'celsuis');
+          console.log('current temp: ', this.currentState.temperature);
+          this.temperature = Utils.convertTemp( this.currentState.temperature, 'celsuis');
+          console.log('current temp 2: ', this.currentState.temperature);
+          this.temperatureLow =  Utils.convertTemp( this.dailyState.data[0].temperatureLow, 'celsuis');
+          this.temperatureHigh = Utils.convertTemp( this.dailyState.data[0].temperatureHigh, 'celsuis');
           this.hourlyState.data.map(record => {
             record.temperature = Utils.convertTemp(record.temperature, 'celsuis');
           });
@@ -69,18 +73,18 @@ export class AppComponent implements OnInit {
         if (!this.disableFahrenheit) {
           this.disableCelsius = false;
           this.disableFahrenheit = true;
-          this.currentState.temperature =  Utils.convertTemp( this.currentState.temperature, 'fahrenheit');
-          this.temperatureLow =  Utils.convertTemp( this.temperatureLow, 'fahrenheit');
-          this.temperatureHigh =  Utils.convertTemp( this.temperatureHigh, 'fahrenheit');
+          this.temperature = Utils.convertTemp( this.temperature, 'fahrenheit');
+          this.temperatureLow = Utils.convertTemp(  this.dailyState.data[0].temperatureLow, 'fahrenheit');
+          this.temperatureHigh =  Utils.convertTemp( this.dailyState.data[0].temperatureHigh, 'fahrenheit');
           this.hourlyState.data.map(record => {
             record.temperature = Utils.convertTemp(record.temperature, 'fahrenheit');
           });
           this.dailyState.data.map(record => {
             record.temperatureHigh = Utils.convertTemp(record.temperatureHigh, 'fahrenheit');
-            record.temperatureLow = Utils.convertTemp(record.temperatureLow, 'fahrenheit');
+            record.temperatureLow =  Utils.convertTemp(record.temperatureLow, 'fahrenheit');
           });
         }
-        
+
         break;
 
       default:
